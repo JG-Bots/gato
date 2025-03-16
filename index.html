@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            background: #111;
+            width: 100%;
+            height: 100dvh;
+            justify-content: center;
+        }
+        video{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video id="player" controls playsinline>
+        <source src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/flm23/GatoDeBotas22022.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+    </video>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("player");
+    
+            // Reduz buffer para economizar memória
+            video.preload = "metadata";
+        });
+    </script>
+</body>
+</html>
