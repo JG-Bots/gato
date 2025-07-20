@@ -3,41 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>filme</title>
+    <title>Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet" async>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Teko', sans-serif;
         }
-        body{
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            padding: 100px 20px;
+            background: linear-gradient(#001f3f, #0a0a0a);
+            border-radius: 0;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 40px 0;
             display: flex;
-            flex-direction: column;
+        }
+        
+        .container-2 {
+            width: 100%;
+        }
+
+        .section {
+            margin-top: 40px;
+            padding: 40px 20px;
             background: #111;
-            width: 100%;
-            height: 100dvh;
-            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.2);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        video{
-            width: 100%;
-            height: 100%;
+
+        .section h2 {
+            font-size: 2em;
+            color: #00aaff;
         }
-    </style>
+
+        .section p {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #bbbbbb;
+        }
+
+        .section-2 {
+            margin-top: 40px;
+            padding: 40px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .section-2 h2 {
+            font-size: 2em;
+            color: #00aaff;
+        }
+
+        .section-2 p {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #bbbbbb;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0077cc;
+            border-radius: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #005599;
+        }
+
+        /* Para Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #0099ff #111;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    .section-preco {
+        width: 100%;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background: #222;
+        opacity: 0;
+        border: 10px solid #000;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .section-preco h2 {
+        font-size: 2.5em;
+        color: #00ccff;
+        margin-bottom: 10px;
+    }
+
+    .section-preco p {
+        font-size: 1.2em;
+        color: #eeeeee;
+        margin-bottom: 15px;
+    }
+
+    .section-preco ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+
+    .section-preco ul li {
+        font-size: 1em;
+        color: #dddddd;
+        margin: 30px 0;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .section-preco ul li::before {
+        content: "✔";
+        color: #00ccff;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    .btn-contratar {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 20px 40px;
+        background: #00aaff;
+        color: #ffffff;
+        font-size: 1.1em;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.3s ease-in-out;
+    }
+
+    .btn-contratar:hover {
+        background: #0088cc;
+    }
+
+    @media screen and (max-width: 600px) {
+        .hero {
+            padding: 200px 20px;
+        }
+        .btn-contratar {
+            padding: 10px 20px;
+        }
+        .container {
+        	display: block;
+        }
+    }
+</style>
 </head>
 <body>
-    <video id="player" controls playsinline>
-        <source src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/flm23/GatoDeBotas22022.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos.
-    </video>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const video = document.getElementById("player");
-    
-            // Reduz buffer para economizar memória
-            video.preload = "metadata";
-        });
-    </script>
+
+<div class="hero">
+    <h1>Bem-vindo</h1>
+    <p>Meu nome é Jerffeson, sou apaixonado por programação e estou aprimorando minhas habilidades em HTML, CSS e JavaScript todos os dias para criar soluções incríveis!</p>
+</div>
+
+<div class="container-2">
+    <div class="section-2">
+        <h2>Sobre Mim</h2>
+        <p>Sou desenvolvedor web júnior, formado em desenvolvimento web, e estou sempre buscando evoluir. Meu objetivo é criar sites modernos, funcionais e personalizados para cada necessidade.</p>
+    </div>
+</div>
+
+<div class="container-2">
+    <div class="section-2">
+        <h2>Por que me contratar?</h2>
+        <p>Posso desenvolver **landing pages**, **APIs** e **sites completos** com **sistemas de login**, tudo por um preço justo. Veja abaixo os planos que ofereço:</p>
+    </div>
+</div>
+
+<div class="container" style="padding: 0;">
+
+    <div class="section-preco">
+        <h2>$25/hora</h2>
+        <p><strong>Manutenção e melhorias do seu site:</strong></p>
+        <ul>
+            <li>Atualizações diárias</li>
+            <li>Adição de novas funcionalidades</li>
+            <li>Melhoria no design e na experiência do usuário</li>
+            <li>Correção de erros e bugs</li>
+        </ul>
+    </div>
+
+    <div class="section-preco">
+        <h2>$100 a $300</h2>
+        <p><strong>Criação de um site do zero:</strong></p>
+        <ul>
+            <li>Desenvolvimento completo e personalizado</li>
+            <li>Código aberto para futuras modificações</li>
+            <li>Estruturado conforme sua necessidade</li>
+        </ul>
+    </div>
+
+    <div class="section-preco">
+        <h2>$100</h2>
+        <p><strong>Landing Page:</strong></p>
+        <ul>
+            <li>Opção mais acessível</li>
+            <li>Página estática sem interações</li>
+            <li>Design personalizado conforme seu gosto</li>
+            <li>Página que fala mais sobre você</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="container-2">
+    <div class="section-2">
+        <h2>Interessado?</h2>
+        <p>Se algum dos planos faz sentido para você, entre em contato e vamos conversar sobre o seu projeto!</p>
+        <button class="btn-contratar">Contratar</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const sections = document.querySelectorAll(".section, .section-2, .section-preco");
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+  if (entry.isIntersecting) {
+  entry.target.style.opacity = "1";
+  entry.target.style.transform = "translateY(0)";
+}
+});
+}, { threshold: 0.2 });
+
+sections.forEach(section => observer.observe(section));
+});
+</script>
 </body>
 </html>
